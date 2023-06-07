@@ -15,38 +15,41 @@ h1{
 
 </style>
 <body>
-    <h1>HTML & CSS HOMEWORK</h1>
+    <h1>Изненада !!</h1>
     
-    <P>My homework should <b>meet all the requirements!</b>!</P>
-    <button onclick="playVideo()">Ne Natiskai !</button>
-<div id="player"></div>
-
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  var player;
-
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '360',
-      width: '640',
-      videoId: 'FGs3FerVLgg', // Replace VIDEO_ID with the actual YouTube video ID
-      playerVars: {
-        autoplay: 0, // Change to 1 if you want the video to autoplay
-      },
-      events: {
-        'onReady': onPlayerReady,
-      },
-    });
-  }
-
-  function onPlayerReady(event) {
-    // Event triggered when the player is ready
-  }
-
-  function playVideo() {
-    player.playVideo();
-  }
-</script>
+  
+    <button onclick="showVideo()">Play Video</button>
+    <div id="player" style="display: none;"></div>
+    
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      var player;
+    
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '360',
+          width: '640',
+          videoId: 'FGs3FerVLgg', // Replace VIDEO_ID with the actual YouTube video ID
+          playerVars: {
+            autoplay: 0, // Change to 1 if you want the video to autoplay
+          },
+          events: {
+            'onReady': onPlayerReady,
+          },
+        });
+      }
+    
+      function onPlayerReady(event) {
+        // Event triggered when the player is ready
+      }
+    
+      function showVideo() {
+        var videoBox = document.getElementById('player');
+        videoBox.style.display = 'block';
+        player.playVideo();
+      }
+    </script>
+    
 
 </body>
 </html>
